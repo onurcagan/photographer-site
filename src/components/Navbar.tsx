@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import { useState } from 'react'
+import { AiOutlineClose } from 'react-icons/ai'
 
 export const Navbar = () => {
   const [nav, setNav] = useState(false)
   return (
-    <nav className="fixed left-0 top-0 w-full z-10 ease-in duration-300 border-gray-200 px-2 sm:px-4 py-2.5">
+    <nav className="fixed top-0 left-0 z-10 w-full px-4 py-4 duration-300 ease-in border-gray-200 sm:px-6">
+      {/* Main Div */}
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link href="/" className="flex items-center">
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">C. Rick Blanc</span>
@@ -67,12 +69,17 @@ export const Navbar = () => {
           }`}
           id="navbar-default"
         >
+          <div className="absolute top-4 right-4 p-2.5 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 ">
+            <AiOutlineClose color="white" size={'1.2rem'} onClick={() => setNav(false)} />
+          </div>
+
           <ul className="flex flex-col gap-12 p-4 mt-4 text-4xl rounded-lg">
             <li>
               <Link
                 href="/"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 aria-current="page"
+                onClick={() => setNav(false)}
               >
                 Home
               </Link>
@@ -81,6 +88,7 @@ export const Navbar = () => {
               <Link
                 href="/#gallery"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                onClick={() => setNav(false)}
               >
                 Gallery
               </Link>
@@ -89,6 +97,7 @@ export const Navbar = () => {
               <Link
                 href="#"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                onClick={() => setNav(false)}
               >
                 Work
               </Link>
@@ -97,6 +106,7 @@ export const Navbar = () => {
               <Link
                 href="/#contact"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                onClick={() => setNav(false)}
               >
                 Contact
               </Link>
