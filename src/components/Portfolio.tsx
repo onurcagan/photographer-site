@@ -6,7 +6,7 @@ const Portfolio = () => {
       id="work"
       className="max-w-[1440px] flex flex-col lg:h-screen items-center justify-center mx-auto pt-24 pb-0 sm:pb-4 md:pb-16 text-center text-slate-300"
     >
-      <h1 className="text-3xl">Travel Photos</h1>
+      <h1 className="text-3xl animate-wiggle">Travel Photos</h1>
       <div className="py-4" />
       <div className="grid justify-center grid-cols-none p-4 gap-y-4 sm:grid-cols-2 xl:grid-cols-3 sm:grid-rows-2 sm:gap-2">
         <div className="w-full">
@@ -15,6 +15,7 @@ const Portfolio = () => {
             alt="/"
             width="500"
             height="500"
+            className="duration-300 hover:opacity-70 hover:animate-pulse"
           />
         </div>
         <div className="w-full h-full col-span-1 row-span-2">
@@ -23,6 +24,7 @@ const Portfolio = () => {
             alt="/"
             width="500"
             height="500"
+            className="duration-300 hover:opacity-70 hover:animate-pulse"
           />
         </div>
         <div className="w-full h-full">
@@ -31,6 +33,7 @@ const Portfolio = () => {
             alt="/"
             width="500"
             height="500"
+            className="duration-300 hover:opacity-70 hover:animate-pulse"
           />
         </div>
         <div className="w-full h-full">
@@ -39,6 +42,7 @@ const Portfolio = () => {
             alt="/"
             width="500"
             height="500"
+            className="duration-300 hover:opacity-70 hover:animate-pulse"
           />
         </div>
         <div className="w-full h-full">
@@ -47,6 +51,7 @@ const Portfolio = () => {
             alt="/"
             width="500"
             height="500"
+            className="duration-300 hover:opacity-70 hover:animate-pulse"
           />
         </div>
       </div>

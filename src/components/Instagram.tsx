@@ -5,7 +5,7 @@ import InstagramImg from './InstagramImg'
 
 const Instagram = () => {
   return (
-    <div className="max-w-[1440px] mx-auto text-center py-24 px-2 text-gray-300">
+    <div className="max-w-[1440px] flex flex-col md:h-screen items-center justify-center mx-auto text-center pb-2 md:pb-8 lg:pb-16 pt-24 lg:mt-32 px-2 text-gray-300">
       <p className="text-2xl font-bold">Follow me on Instagram</p>
       <div className="flex flex-row items-center justify-center">
         <FaInstagram />
