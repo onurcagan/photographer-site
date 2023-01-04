@@ -62,7 +62,7 @@ export const Navbar = () => {
               </Link>
             </li>
             <li className={`${bgColor === 'transparent' ? 'hover:text-slate-200' : 'hover:text-black/60'}`}>
-              <Link href="#" className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:p-0">
+              <Link href="/work" className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:p-0">
                 Work
               </Link>
             </li>
@@ -107,7 +107,7 @@ export const Navbar = () => {
             </li>
             <li>
               <Link
-                href="#"
+                href="/work"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 onClick={() => setNav(false)}
               >

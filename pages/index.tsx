@@ -6,7 +6,7 @@ import Instagram from '../src/components/Instagram'
 export default function Home() {
   return (
     <>
-      <Hero heading="Blanc Photography" message="I capture moments and keep them alive." />
+      <Hero heading="Blanc Photography" message="I capture moments and keep them alive." btn="Book" />
       <Carousel slides={CarouselData} />
       <Instagram />
     </>
