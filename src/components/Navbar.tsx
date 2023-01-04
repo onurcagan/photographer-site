@@ -1,15 +1,36 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 
 export const Navbar = () => {
   const [nav, setNav] = useState(false)
+  const [bgColor, setBgColor] = useState('transparent')
+  const [textColor, setTextColor] = useState('#BDBDBD')
+
+  useEffect(() => {
+    const changeColor = () => {
+      if (window.scrollY >= 90) {
+        setBgColor('#ffffff')
+        setTextColor('#000000')
+      } else {
+        setBgColor('transparent')
+        setTextColor('#BDBDBD')
+      }
+    }
+    window.addEventListener('scroll', changeColor)
+  }, [])
+
   return (
-    <nav className="fixed top-0 left-0 z-10 w-full px-4 py-4 duration-300 ease-in border-gray-200 sm:px-6">
+    <nav
+      className="fixed top-0 left-0 z-10 w-full px-4 py-4 duration-300 ease-in border-gray-200 sm:px-6"
+      style={{ backgroundColor: `${bgColor}` }}
+    >
       {/* Main Div */}
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link href="/" className="flex items-center">
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">C. Rick Blanc</span>
+          <span className="self-center text-xl font-semibold whitespace-nowrap" style={{ color: `${textColor}` }}>
+            C. Rick Blanc
+          </span>
         </Link>
         <button
           data-collapse-toggle="navbar-default"
@@ -18,6 +39,7 @@ export const Navbar = () => {
           aria-controls="navbar-default"
           aria-expanded="false"
           onClick={() => setNav(true)}
+          style={{ color: `${textColor}` }}
         >
           <span className="sr-only">Open main menu</span>
           <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -25,37 +47,27 @@ export const Navbar = () => {
           </svg>
         </button>
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
-            <li>
-              <Link
-                href="#"
-                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                aria-current="page"
-              >
+          <ul
+            style={{ color: `${textColor}` }}
+            className={`flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0`}
+          >
+            <li className={`${bgColor === 'transparent' ? 'hover:text-slate-200' : 'hover:text-black/60'}`}>
+              <Link href="#" className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:p-0" aria-current="page">
                 Home
               </Link>
             </li>
-            <li>
-              <Link
-                href="/#gallery"
-                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
+            <li className={`${bgColor === 'transparent' ? 'hover:text-slate-200' : 'hover:text-black/60'}`}>
+              <Link href="/#gallery" className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:p-0">
                 Gallery
               </Link>
             </li>
-            <li>
-              <Link
-                href="#"
-                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
+            <li className={`${bgColor === 'transparent' ? 'hover:text-slate-200' : 'hover:text-black/60'}`}>
+              <Link href="#" className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:p-0">
                 Work
               </Link>
             </li>
-            <li>
-              <Link
-                href="/#contact"
-                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
+            <li className={`${bgColor === 'transparent' ? 'hover:text-slate-200' : 'hover:text-black/60'}`}>
+              <Link href="/#contact" className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:p-0">
                 Contact
               </Link>
             </li>
@@ -70,14 +82,14 @@ export const Navbar = () => {
           id="navbar-default"
         >
           <div className="absolute top-4 right-4 p-2.5 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 ">
-            <AiOutlineClose color="white" size={'1.2rem'} onClick={() => setNav(false)} />
+            <AiOutlineClose color="lightgray" size={'1.2rem'} onClick={() => setNav(false)} />
           </div>
 
           <ul className="flex flex-col gap-12 p-4 mt-4 text-4xl rounded-lg">
             <li>
               <Link
                 href="/"
-                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 aria-current="page"
                 onClick={() => setNav(false)}
               >
@@ -87,7 +99,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/#gallery"
-                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 onClick={() => setNav(false)}
               >
                 Gallery
@@ -96,7 +108,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="#"
-                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 onClick={() => setNav(false)}
               >
                 Work
@@ -105,7 +117,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/#contact"
-                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 onClick={() => setNav(false)}
               >
                 Contact
