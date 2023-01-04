@@ -20,7 +20,7 @@ function Hero({ heading, message, btn }: { heading: string; message: string; btn
             }
             return
           }}
-          className="px-8 py-2 border"
+          className="px-8 py-2 mt-4 border animate-bounce"
         >
           {btn}
         </button>
