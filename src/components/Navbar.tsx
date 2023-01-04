@@ -52,7 +52,7 @@ export const Navbar = () => {
             className={`flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0`}
           >
             <li className={`${bgColor === 'transparent' ? 'hover:text-slate-200' : 'hover:text-black/60'}`}>
-              <Link href="#" className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:p-0" aria-current="page">
+              <Link href="/" className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:p-0" aria-current="page">
                 Home
               </Link>
             </li>
@@ -67,7 +67,7 @@ export const Navbar = () => {
               </Link>
             </li>
             <li className={`${bgColor === 'transparent' ? 'hover:text-slate-200' : 'hover:text-black/60'}`}>
-              <Link href="/#contact" className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:p-0">
+              <Link href="/contact" className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:p-0">
                 Contact
               </Link>
             </li>
@@ -116,7 +116,7 @@ export const Navbar = () => {
             </li>
             <li>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 onClick={() => setNav(false)}
               >
