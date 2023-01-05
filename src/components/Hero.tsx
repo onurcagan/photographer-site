@@ -12,10 +12,16 @@ function Hero({ heading, message, btn }: { heading: string; message: string; btn
         <button
           onClick={() => {
             if (router.pathname === '/work') {
+              let navbar = document.getElementById('navbar')
+              navbar!.style.opacity = '0'
+              navbar!.style.visibility = 'hidden'
               router.push('#work')
             }
 
             if (router.pathname === '/contact') {
+              let navbar = document.getElementById('navbar')
+              navbar!.style.opacity = '0'
+              navbar!.style.visibility = 'hidden'
               router.push('#contact')
             }
             return
