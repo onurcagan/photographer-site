@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
+import { adjustNavbarOpacityOnScroll } from '../helper/adjustNavbarOpacityOnScroll'
 
 export const Navbar = () => {
   const [nav, setNav] = useState(false)
@@ -8,8 +9,8 @@ export const Navbar = () => {
   const [textColor, setTextColor] = useState('#BDBDBD')
 
   useEffect(() => {
-    const changeColor = () => {
-      if (window.scrollY >= 90) {
+    const changeColorAndHideNavbar = () => {
+      if (window.scrollY >= 80) {
         setBgColor('#ffffff')
         setTextColor('#000000')
       } else {
@@ -17,11 +18,14 @@ export const Navbar = () => {
         setTextColor('#BDBDBD')
       }
     }
-    window.addEventListener('scroll', changeColor)
+    window.addEventListener('scroll', changeColorAndHideNavbar)
   }, [])
+
+  adjustNavbarOpacityOnScroll(nav)
 
   return (
     <nav
+      id="navbar"
       className="fixed top-0 left-0 z-10 w-full px-4 py-4 duration-300 ease-in border-gray-200 sm:px-6"
       style={{ backgroundColor: `${bgColor}` }}
     >
@@ -57,7 +61,15 @@ export const Navbar = () => {
               </Link>
             </li>
             <li className={`${bgColor === 'transparent' ? 'hover:text-slate-200' : 'hover:text-black/60'}`}>
-              <Link href="/#gallery" className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:p-0">
+              <Link
+                href="/#gallery"
+                className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:p-0"
+                onClick={() => {
+                  let navbar = document.getElementById('navbar')
+                  navbar!.style.opacity = '0'
+                  navbar!.style.visibility = 'hidden'
+                }}
+              >
                 Gallery
               </Link>
             </li>
@@ -100,7 +112,12 @@ export const Navbar = () => {
               <Link
                 href="/#gallery"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                onClick={() => setNav(false)}
+                onClick={() => {
+                  setNav(false)
+                  let navbar = document.getElementById('navbar')
+                  navbar!.style.opacity = '0'
+                  navbar!.style.visibility = 'hidden'
+                }}
               >
                 Gallery
               </Link>
