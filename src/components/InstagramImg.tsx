@@ -1,11 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import Image from 'next/image'
 import { FaInstagram } from 'react-icons/fa'
 
 const InstagramImg = ({ socialImg }: { socialImg: string }) => {
   return (
     <div className="relative">
-      <Image alt="/" src={socialImg} height="600" width="600" className="w-full h-full" />
+      <img alt="instagram images" src={socialImg} height="600" width="600" className="w-full h-full" />
       {/* Overlay */}
       <div className="absolute inset-0 flex items-center justify-center hover:bg-black/70 group">
         <p>
