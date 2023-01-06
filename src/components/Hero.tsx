@@ -1,33 +1,15 @@
 import { useRouter } from 'next/router'
-import React, { ComponentProps, ComponentPropsWithoutRef } from 'react'
+import { handleClick } from '../helper/HeroClickHandler'
 
 function Hero({ heading, message, btn }: { heading: string; message: string; btn: string }) {
   const router = useRouter()
   return (
-    <div className="flex items-center justify-center min-h-screen mb-12 bg-fixed bg-center bg-cover custom-img">
+    <div className="flex items-center justify-center min-h-screen bg-fixed bg-center bg-cover custom-img">
       <div className="absolute top-0 bottom-0 left-0 right-0 bg-black/70 z-[2]" />
       <div className="p-5 text-white z-[2] -mt-12">
         <h2 className="text-4xl font-bold sm:text-5xl">{heading}</h2>
         <p className="py-5 sm:text-xl">{message}</p>
-        <button
-          onClick={() => {
-            if (router.pathname === '/work') {
-              let navbar = document.getElementById('navbar')
-              navbar!.style.opacity = '0'
-              navbar!.style.visibility = 'hidden'
-              router.push('#work')
-            }
-
-            if (router.pathname === '/contact') {
-              let navbar = document.getElementById('navbar')
-              navbar!.style.opacity = '0'
-              navbar!.style.visibility = 'hidden'
-              router.push('#contact')
-            }
-            return
-          }}
-          className="px-8 py-2 mt-4 border animate-bounce"
-        >
+        <button onClick={() => handleClick(btn, router)} className="px-8 py-2 mt-4 border animate-bounce">
           {btn}
         </button>
       </div>
