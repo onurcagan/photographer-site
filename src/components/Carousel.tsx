@@ -26,7 +26,7 @@ export function Carousel({ slides }: { slides: { image: string }[] }) {
         {slides.map((slide, index) => {
           return (
             <img
-              className=" w-[85%] md:w-[60%] p-2 duration-500 ease-in-out cursor-pointer hover:opacity-90 snap-center select-none"
+              className=" w-[85%] md:w-[60%] p-2 duration-500 ease-in-out snap-center select-none"
               key={index}
               src={slide.image}
               alt=""
