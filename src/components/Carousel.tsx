@@ -12,7 +12,7 @@ export function Carousel({ slides }: { slides: { image: string }[] }) {
       <div className="py-4" />
 
       <AiOutlineRightCircle
-        className="absolute top-[50%] z-10 text-4xl md:text-5xl text-white -translate-y-[-50%] md:bg-gray-800/40 right-3 md:right-12 rounded-full p-1 cursor-pointer"
+        className="absolute top-[50%] z-[2] text-4xl md:text-5xl text-white -translate-y-[-50%] md:bg-gray-800/40 right-3 md:right-12 rounded-full p-1 cursor-pointer"
         onClick={() => slideRight(slides)}
       />
       <div
@@ -20,7 +20,7 @@ export function Carousel({ slides }: { slides: { image: string }[] }) {
         className="my-auto gap-2 md:gap-12 flex w-full h-full overflow-x-scroll scroll-smooth snap-x snap-mandatory before:shrink-0 before:w-[30vw] after:shrink-0 after:w-[30vw] no-scrollbar"
       >
         <AiOutlineLeftCircle
-          className="absolute top-[50%] z-10 text-4xl md:text-5xl text-white -translate-y-[-50%] md:bg-gray-800/40 left-3 md:left-12 rounded-full p-1 cursor-pointer"
+          className="absolute top-[50%] z-[2] text-4xl md:text-5xl text-white -translate-y-[-50%] md:bg-gray-800/40 left-3 md:left-12 rounded-full p-1 cursor-pointer"
           onClick={() => slideLeft(slides)}
         />
         {slides.map((slide, index) => {
