@@ -12,7 +12,7 @@ const Portfolio = () => {
             alt="/"
             width="500"
             height="500"
-            className="w-full h-full duration-300 hover:opacity-90 hover:animate-pulse"
+            className="w-full h-full "
           />
         </div>
         <div className="col-span-1 row-span-2">
@@ -21,7 +21,7 @@ const Portfolio = () => {
             alt="/"
             width="500"
             height="500"
-            className="w-full h-full duration-300 hover:opacity-90 hover:animate-pulse"
+            className="w-full h-full "
           />
         </div>
         <div>
@@ -30,7 +30,7 @@ const Portfolio = () => {
             alt="/"
             width="500"
             height="500"
-            className="w-full h-full duration-300 hover:opacity-90 hover:animate-pulse"
+            className="w-full h-full "
           />
         </div>
         <div>
@@ -39,7 +39,7 @@ const Portfolio = () => {
             alt="/"
             width="500"
             height="500"
-            className="w-full h-full my-auto duration-300 hover:opacity-90 hover:animate-pulse"
+            className="w-full h-full my-auto "
           />
         </div>
         <div>
@@ -48,7 +48,7 @@ const Portfolio = () => {
             alt="/"
             width="500"
             height="500"
-            className="w-full h-full duration-300 hover:opacity-90 hover:animate-pulse"
+            className="w-full h-full "
           />
         </div>
       </div>
