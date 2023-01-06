@@ -5,14 +5,14 @@ export function handleClick(btn: string, router: NextRouter) {
     let navbar = document.getElementById('navbar')
     navbar!.style.opacity = '0'
     navbar!.style.visibility = 'hidden'
-    router.push('#work')
+    router.push('#work', undefined, { scroll: false })
   }
 
   if (router.pathname === '/contact') {
     let navbar = document.getElementById('navbar')
     navbar!.style.opacity = '0'
     navbar!.style.visibility = 'hidden'
-    router.push('#contact')
+    router.push('#contact', undefined, { scroll: false })
   }
 
   if (btn === 'Book') {
